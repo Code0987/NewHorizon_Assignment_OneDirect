@@ -1,0 +1,18 @@
+.navbar.navbar-default.navbar-fixed-top
+  .container
+    .navbar-header
+      button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      a.navbar-brand(href='/')
+        i.fa.fa-cube
+        | NewHorizon Flights
+    .collapse.navbar-collapse
+      ul.nav.navbar-nav
+        li(class=(title == 'Search') ? 'active' : undefined)
+          a(href='/') Search
+      ul.nav.navbar-nav.navbar-right
+        li
+          a(href='/booking_view') View Booking

@@ -1,0 +1,33 @@
+extends layout
+
+block content
+  p.lead Search and book fligts at the best price!
+  hr
+  .row
+    .col-sm-5
+      form.form-horizontal(method='POST', action='/flights')
+        .form-group
+          label(class='col-sm-2 control-label', for='from') From
+          .col-sm-8
+            select(name='from', id='from')
+              each item in airports
+                option(value=item.id) #{item.name}
+        .form-group
+          label(class='col-sm-2 control-label', for='to') To
+          .col-sm-8            
+            select(name='to', id='to')
+              each item in airports
+                option(value=item.id) #{item.name}
+        .form-group
+          label(class='col-sm-2 control-label now-date', for='date') Departure
+          .col-sm-8
+            input.form-control(type='date', name='date', id='date')
+        .form-group
+          label(class='col-sm-2 control-label', for='count') Travellers
+          .col-sm-8
+            input.form-control(type='number', name='count', id='count', value='1')
+        .form-group
+          .col-sm-offset-2.col-sm-8
+            button.btn.btn-primary(type='submit')
+              i.fa.fa-search
+              | Search »

@@ -1,0 +1,47 @@
+extends layout
+
+block content
+  p.lead Traveller booking confirmation for #{booking.id} @ #{booking.name}
+  hr
+  .row
+    .col-sm-8
+      .row
+        .col-sm-4
+          p Booking Id
+        .col-sm-6
+          p #{booking.id}
+      .row
+        .col-sm-4
+          p Name
+        .col-sm-6
+          p #{booking.name}
+      .row
+        .col-sm-4
+          p Booked on
+        .col-sm-6
+          p #{booking.datetime}
+      .row
+        .col-sm-4
+          p Flights
+        .col-sm-6
+          p #{booking.flights}
+      .row
+        .col-sm-4
+          p Departure
+        .col-sm-6
+          p #{booking.departure}
+      .row
+        .col-sm-4
+          p Arrival
+        .col-sm-6
+          p #{booking.arrival}
+      .row
+        .col-sm-4
+          p Duration
+        .col-sm-6
+          p #{booking.duration}
+      .row
+        .col-sm-4
+          p Amount paid
+        .col-sm-6
+          p ₹#{booking.amount}

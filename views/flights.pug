@@ -1,0 +1,45 @@
+extends layout
+
+block content
+  p.lead Flights from #{src} to #{dest} on #{date} ...
+  hr
+  .row
+    .col-sm-12
+      .row
+        .col-sm-3
+          p Flight
+        .col-sm-2
+          p Departure
+        .col-sm-2
+          p Arrival
+        .col-sm-2
+          p Duration
+        .col-sm-2
+          p Price
+        .col-sm-1
+          p
+      each flight in flights
+        .row
+          .col-sm-1
+            img(src='https://api.adorable.io/avatars/36/#{flight.id}.png', width='36', height='36')
+          .col-sm-2
+            p #{flight.name} (#{flight.id})
+          .col-sm-2
+            p #{flight.departure}
+          .col-sm-2
+            p #{flight.arrival}
+          .col-sm-2
+            p #{flight.duration}
+          .col-sm-1
+            p ₹#{flight.price}
+          .col-sm-1
+            p #{flight.seats_left} left
+          .col-sm-1
+            form.form-horizontal(method='POST', action='/book')
+              input.form-control(type='hidden', name='src', id='src', value=src)
+              input.form-control(type='hidden', name='dest', id='dest', value=dest)
+              input.form-control(type='hidden', name='date', id='date', value=datems)
+              input.form-control(type='hidden', name='count', id='count', value=count)
+              input.form-control(type='hidden', name='amount', id='amount', value=flight.price)
+              input.form-control(type='hidden', name='flight_id', id='flight_id', value=flight.id)
+              input.form-control(type='submit', name='submit', value='Book')
