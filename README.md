@@ -1,5 +1,16 @@
 # NewHorizon_Assignment_OneDirect by @Code0987
 
+This web app is for assignment given by OneDirect.
+
+# Technology stack used
+
+- nodejs
+- typescript
+- javacript
+- expressjs
+- pug html engine
+- sqlite3 database
+
 # Building and running
 
 - Install [Node.js](https://nodejs.org/en/)
